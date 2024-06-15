@@ -79,7 +79,7 @@ reconciled in the `MapBox` component by establishing `LngLatBounds` around the m
 
 8. Testing: Employ testing framework(s) to demonstrate effective test coverage of your application” and leave it up to the candidate to determine what effective coverage is?
 
-> The discrete library functions used for some isolated logic is tested in vitest, but I was not able to successfully work out how to test the Vue components' integrations with `Pinia` and `MapBox`, so tests of the `Vue` components are not included.
+> The discrete library functions used for some isolated logic is tested, but I was not able to successfully work out how to test the Vue components' integrations with `Pinia` and `MapBox`, so tests of the `Vue` components are not included.
 
 ## Commentary
 
