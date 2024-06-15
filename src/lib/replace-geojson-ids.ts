@@ -6,7 +6,7 @@ import { produce, type Draft } from 'immer'
  *
  * Mapbox expects numeric IDs, but GeoJSON provides string-prefixed IDs that cannot be parsed to integers. mapbox-gl's
  * `addSource` function provides a `promoteId` function that pulls a value out of the `Feature.properties` to act as the
- * Feature's internal mapbox ID. This function ensurescorresponding IDs between the raw FeatureCollection and MapBox,
+ * Feature's internal mapbox ID. This function ensures corresponding IDs between the raw FeatureCollection and MapBox,
  * assuming that downstream, `addSource` is called with `addSource({ ..., promoteId: 'id' })`.
  */
 export function replaceGeoJsonIds(collection: FeatureCollection): FeatureCollection {
