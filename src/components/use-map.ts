@@ -92,10 +92,8 @@ export function useMap(): Ref<HTMLDivElement | null> {
   }
 
   function addEarthquakes(earthquakeData: FeatureCollection | null): void {
-    console.log('testing')
     if (map && earthquakeData) {
       map.on('load', add)
-      console.log('here')
     }
 
     function add(): void {

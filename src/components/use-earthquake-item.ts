@@ -5,13 +5,13 @@ import { useHover } from '../state/use-hover'
 import { useSelection } from '../state/use-selection'
 
 interface EarthquakeItem {
+  addToSelection: VoidFunction
+  clearHover: VoidFunction
   isSelected: ComputedRef<boolean>
   location: Ref<string>
   magnitude: ComputedRef<MagnitudeInfo>
-  onClick: VoidFunction
-  onShiftClick: VoidFunction
   setHover: VoidFunction
-  clearHover: VoidFunction
+  setSelection: VoidFunction
   time: ComputedRef<string>
 }
 
@@ -41,7 +41,16 @@ export function useEarthquakeItem(props: Props): EarthquakeItem {
   const time = computed(getTime)
   const isSelected = computed(getIsSelected)
 
-  return { location, magnitude, time, onClick, onShiftClick, isSelected, setHover, clearHover }
+  return {
+    location,
+    magnitude,
+    time,
+    setSelection,
+    addToSelection,
+    isSelected,
+    setHover,
+    clearHover
+  }
 
   function getMagnitude(): MagnitudeInfo {
     const value = props.feature.properties?.mag ?? 0
@@ -57,11 +66,11 @@ export function useEarthquakeItem(props: Props): EarthquakeItem {
     return selection.isSelected(props.feature)
   }
 
-  function onClick(): void {
+  function setSelection(): void {
     selection.setSelection(props.feature)
   }
 
-  function onShiftClick(): void {
+  function addToSelection(): void {
     selection.toggleSelected(props.feature)
   }
 

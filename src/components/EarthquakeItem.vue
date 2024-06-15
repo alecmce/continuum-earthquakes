@@ -9,8 +9,8 @@ const item = useEarthquakeItem(props)
 <template>
   <div
     :class="{ 'earthquake-item': true, selected: item.isSelected?.value }"
-    @click.shift="item.onShiftClick"
-    @click.exact="item.onClick"
+    @click.shift="item.addToSelection"
+    @click.exact="item.setSelection"
     @mouseover="item.setHover"
     @mouseleave="item.clearHover"
   >
@@ -30,9 +30,10 @@ const item = useEarthquakeItem(props)
   border-radius: 1vmin;
   display: flex;
   flex-direction: column;
-  margin: 4px 0;
+  margin: 0.5vmin 0;
   padding: 1vmin;
   cursor: pointer;
+  font-size: 1.6vmin;
   transition: background-color 200ms ease;
   user-select: none;
 }

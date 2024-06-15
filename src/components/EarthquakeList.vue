@@ -25,13 +25,13 @@ const earthquakeData = useEarthquakeData()
   color: #fff;
   display: flex;
   flex-direction: column;
-  left: 1vw;
+  left: 1vmin;
   max-height: 98vh;
   min-width: 200px;
   overflow: scroll;
   padding: 1vmin;
   position: absolute;
-  top: 1vh;
+  top: 1vmin;
   width: 30vw;
   z-index: 1;
 }
